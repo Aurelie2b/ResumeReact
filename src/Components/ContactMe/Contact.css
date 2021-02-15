@@ -1,0 +1,112 @@
+.vertical-timeline-element-date{
+  color: white;
+}
+
+.section-header {
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 50px;
+  margin-bottom: 50px;
+  letter-spacing: 6px;
+  margin-bottom: 25px;
+  text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.contact-list {
+  list-style-type: none;
+  margin-left: -30px;
+  padding-right: 20px;
+  color: black;
+  text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.list-item {
+  line-height: 4;
+  color: #1995ad;
+  text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.contact-text {
+  font: 300 18px "Lato";
+  letter-spacing: 1.9px;
+  color: black;
+  text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.place {
+  margin-left: 62px;
+}
+
+.phone {
+  margin-left: 56px;
+}
+
+.gmail {
+  margin-left: 53px;
+}
+
+.contact-text a {
+  text-decoration: none;
+  transition-duration: 0.2s;
+  color: black;
+}
+
+.contact-text a:hover {
+  text-decoration: none;
+  color: #1995ad;
+}
+
+.social-media-list {
+  font-size: 2.3rem;
+  text-align: center;
+  width: 100%;
+
+}
+
+
+
+.social-media-list li {
+  top: 0;
+  left: -20px;
+  display: inline-block;
+  height: 70px;
+  width: 70px;
+  margin: 10px auto;
+  line-height: 70px;
+  border-radius: 50%;
+  color: black;
+  background-color: #bcbabe;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 6px 6px 7px #888888, inset 0 2px 0 rgba(#000, 0.08), 0 3px 0 4px rgba(#000, 0.05);
+}
+
+.social-media-list li:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+  border-color: #a1d6e2;
+}
+
+.social-media-list li:hover {
+  background-color: #1995ad;
+}
+
+.social-media-list li:hover:after {
+  opacity: 1;
+}
+
+.social-media-list li:hover a {
+  color: #f1f1f2;
+}
+
+
+

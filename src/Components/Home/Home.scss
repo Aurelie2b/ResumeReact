@@ -1,0 +1,39 @@
+.content {
+
+  text-align: center;
+  
+  h2 {
+    font-size: 1.7vw;
+    letter-spacing: 0.54;
+    margin-bottom: 20%;
+  }
+  
+  h1 {
+    font-size: 4vw;
+    font-weight: bold;
+  }
+  
+  h3 {
+    margin: 1em 0;
+    font-size: 1.6vw;
+    line-height: 1.5em;
+    letter-spacing: -0.4;
+  }
+  
+  button {
+    padding: 12px 15px;
+    background: transparent;
+    border: 2px solid;
+    font-size: 1vw;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    transition: 0.5s;
+    
+    &:hover {
+      color: white;
+      background: black;
+      
+    }
+  }
+}
+
