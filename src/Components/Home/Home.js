@@ -12,8 +12,6 @@ export default function Home() {
       <div className="container">
         <br/>
         <br/>
-        <br/>
-        <br/>
         <GreatThings text='DEBAY AURÉLIE' /> 
         <br/>
         <GreatThings text='FULL STACK' />
@@ -21,12 +19,6 @@ export default function Home() {
         <br/>
         <a href={"DebayAurelieResume.pdf"} title="Dowload Aurélie Resume"><button className="text-white">DOWLOAD MY RESUME</button></a>
       </div>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
       <br/>
     </div>
   )

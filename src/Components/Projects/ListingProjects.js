@@ -8,12 +8,10 @@ export default function ListingProjects() {
     <React.Fragment>
 
       <h1 className="section-header text-white">My Projects</h1>
-        <div className="Container m-5 mt-5">
-        <br/>
-        <section className="md:mt-20 pb-40 relative" style={{backgroundColor: 'rgba(0,0,0,0.5)'}}>
-        
+        <div className="Container">
+        <section className="mb-5 mx-5 mt-2 rounded" style={{backgroundColor: 'rgba(0,0,0,0.5)'}}>
           <div
-            className="-mt-10 top-0 bottom-auto left-0 right-0 w-full absolute h-20  "
+            className="-mt-5 top-0 bottom-auto left-0 right-0 w-full absolute h-20  "
             style={{ transform: "translateZ(0)" }}
             >
             <svg

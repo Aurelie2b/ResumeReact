@@ -5,7 +5,7 @@ export default function AboutMe() {
   return (
     <div className="container text-white">
       <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-xl rounded-lg mt-16">
-        <div className="px-6" style={{backgroundColor: 'rgba(0,0,0,0.5)'}}>
+        <div className="px-6 rounded" style={{backgroundColor: 'rgba(0,0,0,0.5)'}}>
         
           <div className="flex flex-wrap justify-center">
             <div className="w-full px-4 flex justify-center">
@@ -27,9 +27,13 @@ export default function AboutMe() {
             <h3 className="text-xl font-semibold leading-normal mb-2mb-2">
               Debay Aurélie
             </h3>
-            <div className="text-sm leading-normal mt-0 mb-2 font-bold uppercase">
+            <div className="text-sm leading-normal mt-0 mb-2 font-bold ">
               <i className="fas fa-map-marker-alt mr-2"></i>{" "}
               Brussels, Belgium
+            </div>
+            <div className="text-sm leading-normal mt-0 mb-2 font-bold ">
+              <i className="fas fa-envelope mr-2"></i>
+              <a href={"mailto:info@debayaurelie.be"} title="Email Aurélie" style={{color:'white'}} target="_blank" rel="noopener noreferrer">info@debayaurelie.be</a>
             </div>
             <div className="mb-2 mt-10">
               <i className="fas fa-briefcase mr-2"></i>
@@ -41,7 +45,7 @@ export default function AboutMe() {
             </div>
             <div className="mb-2 ">
               <i className="fas fa-file-alt mr-2 text-lg"></i>
-              <a href={"DebayAurelieResume.pdf"} title="Download Aurélie Resume" style={{color:'white'}} className="font-normal" target="_blank" rel="noopener noreferrer">Download my resume</a> 
+              <a href={"DebayAurelieResume.pdf"} title="Resume Aurélie" style={{color:'white'}} className="font-normal" target="_blank" rel="noopener noreferrer">Download my resume</a> 
             </div>
         
           </div>

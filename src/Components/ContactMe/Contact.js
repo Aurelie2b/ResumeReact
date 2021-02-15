@@ -28,7 +28,7 @@ import { useForm } from "react-hook-form"
     
     <div className="container">
         <h1 className="section-header text-white">Contact Me</h1>
-        <section className="overflow-hidden mb-5" style={{backgroundColor: 'rgba(0,0,0,0.5)'}}>
+        <section className="overflow-hidden mb-5 mb-5 mx-5 mt-2 rounded" style={{backgroundColor: 'rgba(0,0,0,0.5)'}}>
             <div className="flex flex-wrap justify-center text-white">
                 <div className="w-full md:w-5/12 px-2 md:px-4 mr-auto mt-5 ml-5">
                     <form id="contact-form" name="contact_form" role="form" onSubmit={handleSubmit(onSubmit)}>

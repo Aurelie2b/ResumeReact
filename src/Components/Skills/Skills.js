@@ -34,7 +34,7 @@ export default class Skills extends Component {
                     return (
                         
                         <div className='Container mx-5'>
-                            <div id="accordion" className='shadow-lg text-center' style={{backgroundColor: 'rgba(0,0,0,0.5)'}}>
+                            <div id="accordion" className='shadow-lg text-center rounded' style={{backgroundColor: 'rgba(0,0,0,0.5)'}}>
 
                                 <div className="card-header" id="headingOne">
                                     <h5 className="mb-0">

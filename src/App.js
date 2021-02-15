@@ -1,4 +1,5 @@
 import React, {Fragment} from 'react'
+import ReactDOM from 'react-dom'
 import { Provider } from './Components/Skills/DataSkills'
 import Header from './Components/Header/Header'
 import Footer from './Components/Footer/Footer'
@@ -9,6 +10,7 @@ import Timeline from './Components/Experiences/Timeline'
 import Education from './Components/Education/Education'
 import Contact from './Components/ContactMe/Contact'
 import LisitngProject from './Components/Projects/ListingProjects'
+import ScrollToTop from '../src/ScrollTop'
 import{ init } from 'emailjs-com'
 import './App.css'
 import '@fortawesome/fontawesome-free/css/all.min.css'
@@ -26,20 +28,26 @@ export default function App() {
       <Router>
         <div className="App">
           <Header/>
-          <Fragment>
-            <Route exact path="/Home" component={Home} />
-            <Route exact path="/AboutMe" component={AboutMe} />
-            <Route exact path="/Skills" component={Dropdown} />
-            <Route exact path="/Experiences" component={Timeline} />
-            <Route exact path="/Education" component={Education} />
-            <Route exact path="/Projects" component={LisitngProject} />
-            <Route exact path="/Contact" component={Contact}/>
-          </Fragment>
+          <ScrollToTop>
+            <Fragment>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/AboutMe" component={AboutMe} />
+              <Route exact path="/Skills" component={Dropdown} />
+              <Route exact path="/Experiences" component={Timeline} />
+              <Route exact path="/Education" component={Education} />
+              <Route exact path="/Projects" component={LisitngProject} />
+              <Route exact path="/Contact" component={Contact}/>
+            </Fragment>
+          </ScrollToTop>
           <Footer />
         </div>
       </Router>
     </Provider>
   );
+
 }
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
 
 
