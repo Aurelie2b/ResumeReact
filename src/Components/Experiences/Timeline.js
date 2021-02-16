@@ -22,7 +22,6 @@ export default function Timeline() {
                 ))}
             </section>  
         </React.Fragment>
-    
     )
     
 }

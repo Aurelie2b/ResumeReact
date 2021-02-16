@@ -20,7 +20,7 @@ export default class Header extends Component {
         });
         this.listener = document.addEventListener("scroll", e => {
           var scrolled = document.scrollingElement.scrollTop;
-          if (scrolled >= 100) {
+          if (scrolled >= 75) {
             if (this.state.status !== "resume") {
               this.setState({ status: "resume" });
             }
@@ -48,9 +48,7 @@ export default class Header extends Component {
             <button className="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span> 
             </button>
-           
             <div className="collapse navbar-collapse" id="navbarToggleExternalContent">
-            
                 <ul className="navbar-nav mr-auto">
                     <li className="nav-item">
                         <Link className="nav-link" to="/">Home</Link>
