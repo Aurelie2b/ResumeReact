@@ -37,7 +37,7 @@ export default function App() {
               <Route path="/Education" component={Education}><Education/></Route>
               <Route path="/Projects" component={LisitngProject}><LisitngProject/></Route>
               <Route path="/Contact" component={Contact}><Contact/></Route>
-              <Route to="/NotFound" component={404}><NotFound/></Route>
+              <Route href="/NotFound" component={404}><NotFound/></Route>
               <Redirect to="/NotFound"/>
             </Switch>
           </ScrollToTop>

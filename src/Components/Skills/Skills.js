@@ -10,7 +10,7 @@ export default class Skills extends Component {
     displayListSkills = () => {
         const skills = this.props.description ;
         const listSkills = skills.map((skill) =>
-        <li className="card card-body mb-3" style={{backgroundColor: 'rgba(0,0,0,0.5)'}} key={skill}>
+        <li className="card card-body mb-1 text-white" style={{backgroundColor: 'rgba(0,0,0,0.5)'}} key={skill}>
         {skill}
         </li> );
         
@@ -32,30 +32,22 @@ export default class Skills extends Component {
             <Consumer>
                 {value => {
                     return (
-                        
-                        <div className='Container mx-5'>
-                            <div id="accordion" className='shadow-lg text-center rounded' style={{backgroundColor: 'rgba(0,0,0,0.5)'}}>
-
-                                <div className="card-header" id="headingOne">
-                                    <h5 className="mb-0">
-                                        <button className="btn btn-link" style={{color:'white'}} data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" onClick={this.showSkills}>
-                                        {this.props.categorie}
-                                        </button>
-                                    </h5>
+                        <div id="accordion" className='shadow-lg text-center rounded' style={{backgroundColor: 'rgba(0,0,0,0.5)'}}>
+                            <div className="card-header" id="headingOne">
+                                <h5 className="mb-0">
+                                    <button className="btn btn-link" style={{color:'white'}} data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" onClick={this.showSkills}>
+                                    {this.props.categorie}
+                                    </button>
+                                </h5>
+                                {this.state.show ? (
+                                <div id="collapseOne" className="collapse mx-5 mt-2 rounded" aria-labelledby="headingOne" data-parent="#accordion" style={{background: 'black'}}>
+                                    {this.displayListSkills(value.dispatch)}
                                 </div>
-                                <div id="collapseOne" className="collapse" aria-labelledby="headingOne" data-parent="#accordion" style={{background: 'transparent'}}>
-                                    {this.state.show ? (
-                                        <ul className="card card-body mb-3 text-white" style={{backgroundColor: 'rgba(0,0,0,0.5)'}}>
-                                            {this.displayListSkills(value.dispatch)}
-                                        </ul>
-                                    ) : null}
-                                </div>
-                            </div>    
-                        </div>
-                  
+                                ) : null}
+                            </div>
+                            
+                        </div>    
                     )
-
-
                 }}
             </Consumer>
         )

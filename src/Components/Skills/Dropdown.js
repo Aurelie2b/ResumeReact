@@ -10,7 +10,7 @@ export default class Dropdown extends Component {
                 {value =>{ return (
                     <React.Fragment>
                         <h1 className="section-header text-white">Skills</h1>
-                        <div className="mb-5">
+                        <div className='Container mx-5 mb-5'>
                             {value.dataSkills.map(skill =>(
                                 <Skills
                                 key={skill.id}

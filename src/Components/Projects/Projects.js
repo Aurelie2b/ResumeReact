@@ -20,8 +20,8 @@ export default function Projects(props) {
                     <h5 className="card-title">{name}</h5>
                     <h6 className="card-title">{categorie}</h6>
                     <p className="card-text">{description}</p>
-                    <a href={appLink} className='m-3' target="_blank" rel="noopener noreferrer">App link</a>
-                    <a href={githubLink} className='m-3' target="_blank" rel="noopener noreferrer">Github link</a>
+                    <a href={appLink} className='m-3' target="_blank" rel="noopener noreferrer" style={{color: "black"}}><i class="fas fa-link fa-2x"></i></a>
+                   <a href={githubLink} className='m-3' target="_blank" rel="noopener noreferrer" style={{color: "black"}}><i class="fab fa-github fa-2x"></i></a>
                 </div>
             </div>
         </div>

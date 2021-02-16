@@ -11,7 +11,7 @@ export default function AboutMe() {
             <div className="w-full px-4 flex justify-center">
               <div className="relative mt-12">
                 <img
-                  alt="..."
+                  alt="Aurelie"
                   src={"_MG_9537.jpg"}
                   className="shadow-xl rounded-full h-auto align-middle border-none absolute -m-18 -ml-20 lg:-ml-16 max-w-150-px"
                 />
