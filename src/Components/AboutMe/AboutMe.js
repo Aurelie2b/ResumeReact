@@ -18,7 +18,7 @@ export default function AboutMe() {
               </div>
             </div>
             <div className="w-full px-4 text-center mt-5">
-              <div className="flex justify-center">
+              <div className="flex justify-center mt-5">
                 <h1 className="section-header">About Me</h1>
               </div>
             </div>

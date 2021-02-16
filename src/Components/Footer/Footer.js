@@ -20,16 +20,16 @@ export default class Footer extends Component {
             </li>
             <li>
             <a href="mailto:info@debayaurelie.be" target="_blank" rel="noopener noreferrer" title="Email Aurélie" className="text-white">
-            <i className="far fa-envelope mt-5 mb-4 fa-3x" style={{color: 'white'}}></i></a>
+            <i className="fas fa-envelope mt-5 mb-4 fa-3x" style={{color: 'white'}}></i></a>
             </li>
             <li>
             <a href={"DebayAurelieResume.pdf"} target="_blank" rel="noopener noreferrer" title="Resume Aurélie" className="text-white">
-            <i className="far fa-file-alt mt-5 mb-4 fa-3x" style={{color: 'white'}}></i></a>
+            <i className="fas fa-file-alt mt-5 mb-4 fa-3x" style={{color: 'white'}}></i></a>
             </li>  
           </ul>
         </div>
         <div className="text-center p-3" style={{backgroundColor: 'black'}}>
-          <small>© {new Date().getFullYear()} Aurélie Debay | Made with
+          <small>© {new Date().getFullYear()} Debay Aurélie | Made with
           L<span style={{color: "red"}}>&hearts;</span>VE | All Rights
           Reserved</small>
         </div>
