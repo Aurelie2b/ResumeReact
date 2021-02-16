@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import $ from 'jquery'
 
 export default class Header extends Component {
 
@@ -14,6 +15,9 @@ export default class Header extends Component {
     }
     
     componentDidMount() {
+        $('.navbar-nav>li>a').on('click', function(){
+            $('.navbar-collapse').collapse('hide');
+        });
         this.listener = document.addEventListener("scroll", e => {
           var scrolled = document.scrollingElement.scrollTop;
           if (scrolled >= 100) {
@@ -31,12 +35,11 @@ export default class Header extends Component {
     componentDidUpdate() {
     document.removeEventListener("scroll", this.listener);
     }
+
+    
       
     render() {
-
-        return (
-
-            
+        return (        
         <nav className="navbar navbar-expand-lg navbar-dark sticky-top"
             style={{
                 backgroundColor: this.state.status === "top" ? "transparent" : "black",
