@@ -17,7 +17,7 @@ import './App.css'
 import '@fortawesome/fontawesome-free/css/all.min.css'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min'
-import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom'
+import {HashRouter, Route, Switch, Redirect} from 'react-router-dom'
 
 export default function App() {
 
@@ -25,7 +25,7 @@ export default function App() {
 
   return (
     <Provider>
-      <Router>
+      <HashRouter>
         <div className="App">
           <Header/>
           <ScrollToTop>
@@ -37,13 +37,13 @@ export default function App() {
               <Route path="/Education" component={Education}><Education/></Route>
               <Route path="/Projects" component={LisitngProject}><LisitngProject/></Route>
               <Route path="/Contact" component={Contact}><Contact/></Route>
-              <Route href="/NotFound" component={404}><NotFound/></Route>
+              <Route path="/NotFound" component={404}><NotFound/></Route>
               <Redirect to="/NotFound"/>
             </Switch>
           </ScrollToTop>
           <Footer />
         </div>
-      </Router>
+      </HashRouter>
     </Provider>
   );
 
