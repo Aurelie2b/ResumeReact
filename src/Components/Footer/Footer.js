@@ -8,23 +8,23 @@ export default class Footer extends Component {
           <ul className="list-unstyled d-flex justify-content-around">
             <li>
             <a href="https://www.linkedin.com/in/aureliedebay/" target="_blank" rel="noopener noreferrer" title="Linkedin Aurélie" className="text-white">
-            <i className="fab fa-linkedin-in mt-5 mb-4 fa-3x" style={{color: 'white'}}></i></a>
+            <i className="fab fa-linkedin-in mt-5 mb-4 fa-2x" style={{color: 'white'}}></i></a>
             </li>
             <li>
             <a href="https://github.com/Aurelie2b" target="_blank" rel="noopener noreferrer" title="GitHub Aurélie" className="text-white">
-            <i className="fab fa-github mt-5 mb-4 fa-3x" style={{color: 'white'}}></i></a>
+            <i className="fab fa-github mt-5 mb-4 fa-2x" style={{color: 'white'}}></i></a>
             </li>
             <li>
             <a href="tel:0032485830729" target="_blank" rel="noopener noreferrer" title="Call Aurélie" className="text-white">
-            <i className="fa fa-mobile-alt mt-5 mb-4 fa-3x" style={{color: 'white'}}></i></a>
+            <i className="fa fa-mobile-alt mt-5 mb-4 fa-2x" style={{color: 'white'}}></i></a>
             </li>
             <li>
             <a href="mailto:info@debayaurelie.be" target="_blank" rel="noopener noreferrer" title="Email Aurélie" className="text-white">
-            <i className="fas fa-envelope mt-5 mb-4 fa-3x" style={{color: 'white'}}></i></a>
+            <i className="fas fa-envelope mt-5 mb-4 fa-2x" style={{color: 'white'}}></i></a>
             </li>
             <li>
             <a href={"DebayAurelieResume.pdf"} target="_blank" rel="noopener noreferrer" title="Resume Aurélie" className="text-white">
-            <i className="fas fa-file-alt mt-5 mb-4 fa-3x" style={{color: 'white'}}></i></a>
+            <i className="fas fa-file-alt mt-5 mb-4 fa-2x" style={{color: 'white'}}></i></a>
             </li>  
           </ul>
         </div>

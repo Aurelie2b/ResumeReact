@@ -6,7 +6,7 @@ export default function Education() {
         <div className="container">
             <h1 className="section-header text-white">Education</h1>
 
-            <div className="card text-center mt-5 mb-5 rounded" style={{backgroundColor: 'rgba(0,0,0,0.5)'}}>
+            <div className="card text-center mb-5 rounded" style={{backgroundColor: 'rgba(0,0,0,0.5)'}}>
                 <div className="card-header">
                     <h5 className="card-title text-white">Training Full Stack Web developer @ Interface3</h5>
                 </div>

@@ -1,7 +1,6 @@
 export default [
     {
         id : 1,
-       
         name: 'Resume Website',
         categorie: 'React',
         description: 'My second website from scratch',

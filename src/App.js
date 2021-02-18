@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from './Components/Skills/DataSkills'
 import Header from './Components/Header/Header'
@@ -9,9 +9,9 @@ import Dropdown from './Components/Skills/Dropdown'
 import Timeline from './Components/Experiences/Timeline'
 import Education from './Components/Education/Education'
 import Contact from './Components/ContactMe/Contact'
-import LisitngProject from './Components/Projects/ListingProjects'
+import Projects from './Components/Projects/CarouselDisplay'
 import NotFound from './404'
-import ScrollTop from './ScrollTop'
+import ScrollToTop from '../src/ScrollTop'
 import{ init } from 'emailjs-com'
 import './App.css'
 import '@fortawesome/fontawesome-free/css/all.min.css'
@@ -22,24 +22,24 @@ import {HashRouter, Route, Switch, Redirect} from 'react-router-dom'
 export default function App() {
 
   init("user_k3U0QTPRkPhBurlE3Li0b");
-
   return (
     <Provider>
       <HashRouter>
         <div className="App">
           <Header/>
-          <Switch>
-            <Route exact path="/" component={Home}><Home/></Route>
-            <Route path="/AboutMe" component={AboutMe}><AboutMe/></Route>
-            <Route path="/Skills" component={Dropdown}><Dropdown/></Route>
-            <Route path="/Experiences" component={Timeline}><Timeline/></Route>
-            <Route path="/Education" component={Education}><Education/></Route>
-            <Route path="/Projects" component={LisitngProject}><LisitngProject/></Route>
-            <Route path="/Contact" component={Contact}><Contact/></Route>
-            <Route path="/NotFound" component={404}><NotFound/></Route>
-            <Redirect to="/NotFound"/>
-          </Switch>
-          <ScrollTop />
+          <ScrollToTop>
+            <Switch>
+              <Route exact path="/" component={Home}><Home/></Route>
+              <Route path="/AboutMe" component={AboutMe}><AboutMe/></Route>
+              <Route path="/Skills" component={Dropdown}><Dropdown/></Route>
+              <Route path="/Experiences" component={Timeline}><Timeline/></Route>
+              <Route path="/Education" component={Education}><Education/></Route>
+              <Route path="/Projects" component={Projects}><Projects/></Route>
+              <Route path="/Contact" component={Contact}><Contact/></Route>
+              <Route path="/NotFound" component={404}><NotFound/></Route>
+              <Redirect to="/NotFound"/>
+            </Switch>
+          </ScrollToTop>
           <Footer />
         </div>
       </HashRouter>

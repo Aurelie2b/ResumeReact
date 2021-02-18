@@ -20,7 +20,7 @@ export default class Header extends Component {
         });
         this.listener = document.addEventListener("scroll", e => {
           var scrolled = document.scrollingElement.scrollTop;
-          if (scrolled >= 75) {
+          if (scrolled >= 100) {
             if (this.state.status !== "resume") {
               this.setState({ status: "resume" });
             }
