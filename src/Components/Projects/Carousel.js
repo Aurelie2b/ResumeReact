@@ -80,11 +80,11 @@ import './Carousel.scss'
       super(props);
       this.state = {
         currentIndex: 0,
+        isFlipped: false
       };
     }
 
-    
-    //carousel 
+ 
     renderSlides() {
       const { currentIndex } = this.state;
 
@@ -113,25 +113,32 @@ import './Carousel.scss'
         
 
           <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-          <Flippy flipOnHover={true} flipOnClick={true}  flipDirection="horizontal">
-            <div className="carousel-inner">
-              <div className="carousel-item active">
-                
-                  <FrontSide>
-                    <img className="d-block w-100 front" src={slide.picture} alt={slide.id}/>
-                  </FrontSide>
-                  <BackSide>
-                  <div class="card" style={{ backgroundColor: 'black', color:'white'}}>
-                    <div className="card body" style={{ backgroundColor: 'black', color:'white'}}>
-                      <h4 className="card-title mt-5">{slide.name + ' ' + ' : ' + slide.categorie}</h4>
-                      <h5 className="card-text mt-2">{slide.description}</h5>
-                      <h3 className="card-text mt-3 mb-5"><a href={slide.appLink} className='m-3' target="_blank" rel="noopener noreferrer" style={{color: "white"}}><i class="fas fa-link"></i></a><a href={slide.githubLink} className='m-3' target="_blank" rel="noopener noreferrer" style={{color: "white"}}><i class="fab fa-github"></i></a></h3>
+            <Flippy flipDirection="horizontal">
+              <div className="carousel-inner">
+                <div className="carousel-item active">
+                  
+                    <FrontSide>
+                      
+                    <div class="card" style={{ backgroundColor: 'black'}}>
+                      <img className="d-block w-100" src={slide.picture} alt={slide.id}/>
+                      <div class="d-block btn text-white">View more</div>
                     </div>
-                  </div>
-                  </BackSide>
-                
-              </div>
-            </div>   
+                    </FrontSide>
+                    <BackSide>
+                    <div class="card" style={{ backgroundColor: 'black', color:'white'}}>
+                      <div className="card body" style={{ backgroundColor: 'black', color:'white'}}>
+                        <h5 className="card-title mt-5">{slide.name + ' ' + ' : ' + slide.categorie}</h5>
+                        <h6 className="card-text mt-2">{slide.description}</h6>
+                        <h3 className="card-text mt-5"><a href={slide.appLink} className='m-3' target="_blank" rel="noopener noreferrer" style={{color: "white"}}><i class="fas fa-link"></i></a><a href={slide.githubLink} className='m-3' target="_blank" rel="noopener noreferrer" style={{color: "white"}}><i class="fab fa-github"></i></a></h3>
+                      </div>
+                      <div class="card mb-2" style={{ backgroundColor: 'black'}}>
+                        <div class="d-block btn text-white mt-3">Close</div>
+                      </div>
+                    </div>
+                    </BackSide>
+                  
+                </div>
+              </div>   
             </Flippy>    
           </div>
           
@@ -148,7 +155,7 @@ import './Carousel.scss'
       <div className="Wrapper">
         <div className="Carousel">{this.renderSlides()}</div>
 
-      
+      <br/>
       <div className="Buttons">
       <button
         disabled={currentIndex === 0}
