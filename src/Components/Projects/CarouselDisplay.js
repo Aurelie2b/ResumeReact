@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Carousel from './Carousel'
 
-class carouseldisplay extends Component {
+export default class CarouselDisplay extends Component {
     render() {
         return (
             <div id="root">
@@ -11,9 +11,10 @@ class carouseldisplay extends Component {
                     <Carousel/>
                     </section>    
                 </div>
-            </div>
+                <br/>
+                <br/>
+            </div> 
         );
     }
 }
 
-export default carouseldisplay;

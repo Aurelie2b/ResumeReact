@@ -53,7 +53,7 @@ export default function AboutMe() {
             <div className="flex flex-wrap justify-center">
               <div className="w-full lg:w-9/12 px-4">
                 <p className="mb-4 text-lg leading-relaxed">
-                Hello, my name is Aurélie.<br/><br/>
+                Hello, <br/><br/>
                 I started working when I was 18. With my 14 years of experience in the world of work, I have learned to work in team, to be autonomous and structured, and I have very good contact with the client.<br/><br/>
                 I started as a saleswomen and ended up as a project coordinator for a website leader in online flash sales in Belgium. This is how I discovered the world of IT and web development.<br/><br/>
                 Thanks to my close friends who are developers.

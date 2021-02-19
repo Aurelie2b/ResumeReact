@@ -1,136 +1,174 @@
 import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
-import ReactCSSTransitionGroup from 'react-transition-group/CSSTransitionGroup'
+import Flippy, { FrontSide, BackSide } from 'react-flippy'
+import $ from 'jquery'
 import './Carousel.scss'
 
+  const slides = [
+    {
+        id : 1,
+        name: 'Resume Website',
+        categorie: 'React',
+        description: 'My second website from scratch',
+        picture: 'resume2.jpg',
+        githubLink : 'https://github.com/Aurelie2b/resumeReact',
+        appLink : 'http://www.debayaurelie.be/'
+    },
+    {
+        id : 2,
+        name: 'Resume Website',
+        categorie: 'JavaScript',
+        description: 'My first website from scratch done in training',
+        picture: 'firstResumeWebsite.jpg',
+        githubLink : 'https://github.com/Aurelie2b/ResumeWebsite',
+        appLink : 'http://www.if3projets.net/wad19/aurelie/'
+    },
+    {
+        id : 3,
+        name: 'ImmoBab',
+        categorie: 'Angular, Firebase',
+        description: 'Training. Login: aure@2b.be, Password: 123456',
+        picture: 'immoBab.jpg',
+        githubLink : 'https://github.com/Aurelie2b/ImmoBab',
+        appLink : 'https://immobab-77233.web.app/login'
+    },
+    {
+        id : 4,
+        name: 'AppContact',
+        categorie: 'React',
+        description: 'Training',
+        picture: 'appContact.jpg',
+        githubLink : 'https://github.com/Aurelie2b/appcontacts',
+        appLink : 'https://aurelie2b.github.io/AddContact'
+    },
+    {
+        id : 5,
+        name: 'InterFace',
+        categorie: 'Javascript, Firebase',
+        description: 'Hackaton @ Interface3',
+        picture: 'Hackaton.png',
+        githubLink : 'https://github.com/sabidlv/Projet_Interface',
+        
+    },
+    {
+        id : 6,
+        name: 'Mini game',
+        categorie: 'Unity',
+        description: 'Mini game we made in training',
+        picture: 'Unity.png',
+        githubLink : '',
+        appLink : ''
+        
+    },
+    {
+        id : 7,
+        name: 'Submarine',
+        categorie: 'OpenScad',
+        description: 'Exercice made in training',
+        picture: 'SousMarin.png',
+        githubLink : '',
+        appLink : ''
+        
+    },
 
- export default class Carousel extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      items: [
-        "resume2.jpg",
-        "firstResumeWebsite.jpg",
-        "immoBab.jpg",
-        "appContact.jpg",
-        "Hackaton.png",
-        "SousMarin.png",
-        "Unity.png"
-      ],
-      current: 0,
-      isNext: true
-    };
+  ];
 
-    this.handlerPrev = this.handlerPrev.bind(this);
-    this.handlerNext = this.handlerNext.bind(this);
-    this.goToHistoryClick = this.goToHistoryClick.bind(this);
-  }
+  export default class Carousel extends Component {
 
-  handlerPrev() {
-    let index = this.state.current,
-      length = this.state.items.length;
-
-    if (index < 1) {
-      index = length;
+      
+    constructor(props) {
+      super(props);
+      this.state = {
+        currentIndex: 0,
+      };
     }
 
-    index = index - 1;
+    
+    //carousel 
+    renderSlides() {
+      const { currentIndex } = this.state;
 
-    this.setState({
-      current: index,
-      isNext: false
-    });
-  }
+      return slides.map((slide, index) => {
+        const classMapper = {
+          [currentIndex - 2]: "Carousel-slide--previous",
+          [currentIndex - 1]: "Carousel-slide--left",
+          [currentIndex]: "Carousel-slide--active",
+          [currentIndex + 1]: "Carousel-slide--right",
+          [currentIndex + 2]: "Carousel-slide--next"
+        };
 
-  handlerNext() {
-    let index = this.state.current,
-      length = this.state.items.length - 1;
+        if (index < currentIndex - 2 || index > currentIndex + 2) {
+          return null;
+        }
 
-    if (index == length) {
-      index = -1;
-    }
 
-    index = index + 1;
-
-    this.setState({
-      current: index,
-      isNext: true
-    });
-  }
-
-  goToHistoryClick(curIndex, index) {
-    let next = curIndex < index;
-    this.setState({
-      current: index,
-      isNext: next
-    });
-  }
-
-  render() {
-    let index = this.state.current,
-      isnext = this.state.isNext,
-      src = this.state.items[index];
-
-    return (
-      <div className="project">
-        <div className="carousel">
-          <ReactCSSTransitionGroup
-            transitionName={{
-              enter: isnext ? "enter-next" : "enter-prev",
-              enterActive: "enter-active",
-              leave: "leave",
-              leaveActive: isnext ? "leave-active-next" : "leave-active-prev"
-            }}
-          >
-            <div className="carousel_slide" key={index}>
-              <img src={src} />
-            </div>
-          </ReactCSSTransitionGroup>
-          <button
-            className="carousel_control carousel_control__prev"
-            onClick={this.handlerPrev}
-          >
-            <span></span>
-          </button>
-          <button
-            className="carousel_control carousel_control__next"
-            onClick={this.handlerNext}
-          >
-            <span></span>
-          </button>
-          <div className="carousel_history5">
-            <History
-              current={this.state.current}
-              items={this.state.items}
-              changeSilde={this.goToHistoryClick}
-            />
-          </div>
-        </div>
-      </div>
-    );
-  }
-}
-
-export class History extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    let current = this.props.current;
-    let items = this.props.items.map((el, index) => {
-      let name = index == current ? "active" : "";
       return (
-        <li key={index}>
-          <button
-            className={name}
-            onClick={() => this.props.changeSilde(current, index)}
-          ></button>
-        </li>
+
+        
+        <div
+          key={slide.id}
+          className={`Carousel-slide ${classMapper[index]}`}
+          onClick={() => this.setState({ currentIndex: index })}
+        >
+        
+
+          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <Flippy flipOnHover={true} flipOnClick={true}  flipDirection="horizontal">
+            <div className="carousel-inner">
+              <div className="carousel-item active">
+                
+                  <FrontSide>
+                    <img className="d-block w-100 front" src={slide.picture} alt={slide.id}/>
+                  </FrontSide>
+                  <BackSide>
+                  <div class="card" style={{ backgroundColor: 'black', color:'white'}}>
+                    <div className="card body" style={{ backgroundColor: 'black', color:'white'}}>
+                      <h4 className="card-title mt-5">{slide.name + ' ' + ' : ' + slide.categorie}</h4>
+                      <h5 className="card-text mt-2">{slide.description}</h5>
+                      <h3 className="card-text mt-3 mb-5"><a href={slide.appLink} className='m-3' target="_blank" rel="noopener noreferrer" style={{color: "white"}}><i class="fas fa-link"></i></a><a href={slide.githubLink} className='m-3' target="_blank" rel="noopener noreferrer" style={{color: "white"}}><i class="fab fa-github"></i></a></h3>
+                    </div>
+                  </div>
+                  </BackSide>
+                
+              </div>
+            </div>   
+            </Flippy>    
+          </div>
+          
+        </div>
       );
     });
+  }
 
-    return <ul>{items}</ul>;
+
+  render() {
+    const { currentIndex } = this.state;
+
+    return (
+      <div className="Wrapper">
+        <div className="Carousel">{this.renderSlides()}</div>
+
+      
+      <div className="Buttons">
+      <button
+        disabled={currentIndex === 0}
+        onClick={() => this.setState({ currentIndex: currentIndex - 1 })}
+        style={{backgroundColor: 'rgba(0,0,0,0.5)'}}
+      >
+      <i class="fas fa-chevron-left"></i>
+      </button>
+      <button
+        disabled={currentIndex === slides.length - 1}
+        onClick={() => this.setState({ currentIndex: currentIndex + 1 })}
+        style={{backgroundColor: 'rgba(0,0,0,0.5)'}}
+      >
+      <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+
+      
+      </div>
+    );
   }
 }
 
