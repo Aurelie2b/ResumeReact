@@ -111,40 +111,35 @@ import './Carousel.scss'
           onClick={() => this.setState({ currentIndex: index })}
         >
         
-        <Flippy flipDirection="horizontal">
+
           <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            
+            <Flippy flipDirection="horizontal">
               <div className="carousel-inner">
                 <div className="carousel-item active">
                   <FrontSide>
                   <div className="card" style={{ backgroundColor: 'black'}}>
-                    <img className="" src={slide.picture} alt={slide.id}></img>
-                    <bouton className="d-block btn text-white" style={{ backgroundColor: 'black'}}>View more</bouton>
+                    <img className="" src={slide.picture} alt={slide.id}/>
+                  
                   </div>
                   </FrontSide>
                   <BackSide>
                  
-                    <div className="carousel-item active" style={{ backgroundColor: 'black', color: 'white'}}>
-                
-                    <div className="carousel-caption d-block mb-5 mx-5" style={{ backgroundColor: 'black'}}>
-                      <h6 className="card-title ">{slide.categorie}</h6>
-                      <h6 className="card-title ">{slide.description}</h6>
-                      <h5 className="card-title"><a href={slide.appLink} className='m-3' target="_blank" rel="noopener noreferrer" style={{color: "white"}}><i class="fas fa-link"></i></a><a href={slide.githubLink} className='' target="_blank" rel="noopener noreferrer" style={{color: "white"}}><i class="fab fa-github"></i></a></h5>
-                      <bouton className="d-block btn text-white" style={{ backgroundColor: 'black'}}>Close</bouton>
+                    <div className="card">
+                  
+                      <h6 className="card-title">{slide.categorie}</h6>
+                      <h6 className="card-text">{slide.description}</h6>
+                      <h5 className="card-text"><a href={slide.appLink} className='m-3' target="_blank" rel="noopener noreferrer" style={{color: "white"}}><i class="fas fa-link"></i></a><a href={slide.githubLink} className='' target="_blank" rel="noopener noreferrer" style={{color: "white"}}><i class="fab fa-github"></i></a></h5>
+                      <bouton class="d-block btn text-white" style={{ backgroundColor: 'black'}}>Close</bouton>
                     </div>
-                    
-                    </div>
-            
-              
                     
               
                   </BackSide>
                   
                 </div>
               </div>   
-               
+            </Flippy>    
           </div>
-          </Flippy>
+          
         </div>
       );
     });
