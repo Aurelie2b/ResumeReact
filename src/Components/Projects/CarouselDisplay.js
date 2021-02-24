@@ -6,7 +6,7 @@ export default class CarouselDisplay extends Component {
         return (
             <div id="root">
                 <div className="container">
-                    <h1 className="section-header text-white">My projects</h1>
+                    <h1 className="section-header text-white">Projects</h1>
                     <section className="overflow-hidden mb-5 rounded" style={{backgroundColor: 'rgba(0,0,0,0.5)'}}>             
                     <Carousel/>
                     </section>    

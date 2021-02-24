@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useState} from 'react'
 import './Contact.css'
 import emailjs from 'emailjs-com'
 import { useForm } from "react-hook-form"
+import Modal from 'react-bootstrap/Modal'
+import Button from 'react-bootstrap/Button'
 
     const Contact = () => {
         const { register, handleSubmit, errors } = useForm();
@@ -19,10 +21,16 @@ import { useForm } from "react-hook-form"
             serviceID, templateId,
             variables
         ).then(res => {
-            alert('Email successfully sent!')
+            handleShow()
         })
             .catch(err => alert.error('There has been an error.  Here some thoughts on the error that occured:', err))
-    }   
+    } 
+    
+    
+    const [show, setShow] = useState(false);
+    const handleShow = () => setShow(true);
+    const handleClose = () => setShow(false);
+
 
   return (  
     
@@ -69,8 +77,23 @@ import { useForm } from "react-hook-form"
                             </textarea>
                             {errors.comment && "oops, you forgot your message!"}<br />
                         </div>
-                        <button type="submit" className="btn text-white mb-5" style={{background: 'dark'}}>Send</button>
+                        <Button type="submit" className="mb-5" variant="dark">Send</Button>
                     </form>
+
+
+                    <Modal show={show} onHide={handleClose} size="sm"
+                    aria-labelledby="contained-modal-title-vcenter"
+                    centered>
+                        <Modal.Header closeButton>
+                            <Modal.Title >Message send</Modal.Title>
+                        </Modal.Header>
+                        <Modal.Footer>
+                            <Button variant="secondary" onClick={handleClose}>
+                                Close
+                            </Button>
+                        </Modal.Footer>
+                    </Modal>
+
                 </div>
                 <div className="w-full md:w-4/12 px-4 mr-auto ml-auto mt-32 relative">
                     <i className="fab fa-github text-gray-800 absolute overflow-hidden -top-150-px -right-100 left-auto opacity-80 text-55"></i>
@@ -79,7 +102,6 @@ import { useForm } from "react-hook-form"
         </section>    
     </div>
 
-    
     );
 }
 

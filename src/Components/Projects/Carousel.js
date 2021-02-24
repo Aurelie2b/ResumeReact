@@ -74,7 +74,6 @@ import './Carousel.scss'
   ];
 
   export default class Carousel extends Component {
-
       
     constructor(props) {
       super(props);
@@ -83,9 +82,9 @@ import './Carousel.scss'
         isFlipped: false
       };
     }
-
  
     renderSlides() {
+
       const { currentIndex } = this.state;
 
       return slides.map((slide, index) => {
@@ -101,50 +100,37 @@ import './Carousel.scss'
           return null;
         }
 
-
       return (
 
-        
         <div
           key={slide.id}
           className={`Carousel-slide ${classMapper[index]}`}
           onClick={() => this.setState({ currentIndex: index })}
         >
-        
-        <Flippy flipDirection="horizontal">
-          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            
-              <div className="carousel-inner">
-                <div className="carousel-item active">
-                  <FrontSide>
-                  <div className="card" style={{ backgroundColor: 'black'}}>
-                    <img className="" src={slide.picture} alt={slide.id}></img>
-                    <bouton className="d-block btn text-white" style={{ backgroundColor: 'black'}}>View more</bouton>
+          <Flippy flipDirection="horizontal">
+              <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
+                <div className="carousel-inner">
+                  <div className="carousel-item active">
+                    <FrontSide>
+                      <div className="card" style={{ backgroundColor: 'black'}}>
+                        <img className="d-block w-100" src={slide.picture} alt={slide.id}></img>
+                        <bouton className="d-block btn text-white" style={{ backgroundColor: 'black'}}>View more</bouton>
+                      </div>
+                    </FrontSide>
+                    <BackSide>
+                      <div className="carousel-item active" style={{ backgroundColor: 'black', color: 'white'}}>
+                        <div className="carousel-caption d-block mb-5 mx-5" style={{ backgroundColor: 'black'}}>
+                          <h6 className="card-title ">{slide.categorie}</h6>
+                          <h6 className="card-title ">{slide.description}</h6>
+                          <h5 className="card-title"><a href={slide.appLink} className='m-3' target="_blank" rel="noopener noreferrer" style={{color: "white"}}><i className="fas fa-link"></i></a><a href={slide.githubLink} className='' target="_blank" rel="noopener noreferrer" style={{color: "white"}}><i className="fab fa-github"></i></a></h5>
+                          <bouton className="d-block btn text-white" style={{ backgroundColor: 'black'}}>Close</bouton>
+                        </div>
+                      </div>
+                    </BackSide>
                   </div>
-                  </FrontSide>
-                  <BackSide>
-                 
-                    <div className="carousel-item active" style={{ backgroundColor: 'black', color: 'white'}}>
-                
-                    <div className="carousel-caption d-block mb-5 mx-5" style={{ backgroundColor: 'black'}}>
-                      <h6 className="card-title ">{slide.categorie}</h6>
-                      <h6 className="card-title ">{slide.description}</h6>
-                      <h5 className="card-title"><a href={slide.appLink} className='m-3' target="_blank" rel="noopener noreferrer" style={{color: "white"}}><i class="fas fa-link"></i></a><a href={slide.githubLink} className='' target="_blank" rel="noopener noreferrer" style={{color: "white"}}><i class="fab fa-github"></i></a></h5>
-                      <bouton className="d-block btn text-white" style={{ backgroundColor: 'black'}}>Close</bouton>
-                    </div>
-                    
-                    </div>
-            
-              
-                    
-              
-                  </BackSide>
-                  
-                </div>
-              </div>   
-               
-          </div>
-          </Flippy>
+                </div>   
+              </div>
+            </Flippy>
         </div>
       );
     });
@@ -157,26 +143,23 @@ import './Carousel.scss'
     return (
       <div className="Wrapper">
         <div className="Carousel">{this.renderSlides()}</div>
-
-      <br/>
-      <div className="Buttons">
-      <button
-        disabled={currentIndex === 0}
-        onClick={() => this.setState({ currentIndex: currentIndex - 1 })}
-        style={{backgroundColor: 'rgba(0,0,0,0.5)'}}
-      >
-      <i class="fas fa-chevron-left"></i>
-      </button>
-      <button
-        disabled={currentIndex === slides.length - 1}
-        onClick={() => this.setState({ currentIndex: currentIndex + 1 })}
-        style={{backgroundColor: 'rgba(0,0,0,0.5)'}}
-      >
-      <i class="fas fa-chevron-right"></i>
-      </button>
-    </div>
-
-      
+          <br/>
+          <div className="Buttons">
+          <button
+            disabled={currentIndex === 0}
+            onClick={() => this.setState({ currentIndex: currentIndex - 1 })}
+            style={{backgroundColor: 'rgba(0,0,0,0.5)'}}
+          >
+          <i className="fas fa-chevron-left"></i>
+          </button>
+          <button
+            disabled={currentIndex === slides.length - 1}
+            onClick={() => this.setState({ currentIndex: currentIndex + 1 })}
+            style={{backgroundColor: 'rgba(0,0,0,0.5)'}}
+          >
+          <i className="fas fa-chevron-right"></i>
+          </button>
+        </div>
       </div>
     );
   }

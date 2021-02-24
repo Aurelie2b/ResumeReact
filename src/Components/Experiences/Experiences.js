@@ -1,6 +1,8 @@
-import React from 'react'
-import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
+import React, { useState } from 'react'
+import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component'
 import 'react-vertical-timeline-component/style.min.css'
+import Modal from 'react-bootstrap/Modal'
+import Button from 'react-bootstrap/Button'
 
 export default function Experiences(props) {
 
@@ -11,21 +13,41 @@ export default function Experiences(props) {
     const {city} = props ;
     const {workDescription} = props ;
 
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
     if (id %2) {
         return(
-            <div className="container">
+            <div className="container text-center">
                 <VerticalTimeline>
                     <VerticalTimelineElement
-                        contentStyle={{ background: 'transparent'}}
-                        className="vertical-timeline-element--work text-white" 
-                        date={year}
-                        iconStyle={{ background: 'transparent'}}
-                        position="left"
-                        >
-                        <h5 className="vertical-timeline-element-title text-center">{job}</h5>
-                        <h5 className="vertical-timeline-element-title text-center">{society}</h5>
-                        <h6 className="vertical-timeline-element-subtitle text-center">{city}</h6>
-                        <p>{workDescription}</p>
+                    contentStyle={{ background: 'transparent'}}
+                    className="text-white" 
+                    date={year}
+                    iconStyle={{ background: 'transparent'}}
+                    position="left"
+                    >
+                        <h5 className="mt-2">{job}</h5>
+                        <h5 className="mt-3">{' @' + society}</h5>
+                        <h6 className="mt-3">{city}</h6>
+                        <Button className="mt-3" variant="dark" onClick={handleShow} >Work description</Button>
+                
+                        <Modal show={show} onHide={handleClose} size="lg"
+                        aria-labelledby="contained-modal-title-vcenter"
+                        centered>
+                            <Modal.Header closeButton>
+                            <Modal.Title >Work description</Modal.Title>
+                            </Modal.Header>
+                            <Modal.Body>{workDescription}</Modal.Body>
+                            <Modal.Footer>
+                                <Button variant="secondary" onClick={handleClose}>
+                                    Close
+                                </Button>
+                            </Modal.Footer>
+                        </Modal>
+                          
                     </VerticalTimelineElement>
                 </VerticalTimeline>
             </div>
@@ -33,22 +55,37 @@ export default function Experiences(props) {
     }
     else{
         return(
-            <div className="container">
+            <div className="container text-center">
                 <VerticalTimeline>
                     <VerticalTimelineElement
-                    className="vertical-timeline-element--work text-white"
+                    className="text-white"
                     contentStyle={{ background: 'transparent'}}
                     date={year}
-                    iconStyle={{ background: 'transparent'}}
                     position="right"
                     >
-                    <h5 className="vertical-timeline-element-title text-center">{job}</h5>
-                    <h5 className="vertical-timeline-element-title text-center">{society}</h5>
-                    <h6 className="vertical-timeline-element-subtitle text-center">{city}</h6>
-                    <p>{workDescription}</p>
+                        <h5 className="mt-2">{job}</h5>
+                        <h5 className="mt-3">{' @' + society}</h5>
+                        <h6 className="mt-3">{city}</h6>
+                        <Button className="mt-3" variant="dark" onClick={handleShow} >Work description</Button>
+                           
+                        <Modal show={show} onHide={handleClose} size="lg"
+                        aria-labelledby="contained-modal-title-vcenter"
+                        centered>
+                            <Modal.Header closeButton>
+                            <Modal.Title >Work description</Modal.Title>
+                            </Modal.Header>
+                            <Modal.Body>{workDescription}</Modal.Body>
+                            <Modal.Footer>
+                                <Button variant="secondary" onClick={handleClose}>
+                                    Close
+                                </Button>
+                            </Modal.Footer>
+                        </Modal>
+                            
                     </VerticalTimelineElement>
                 </VerticalTimeline>
             </div>
         )
     }
 }
+

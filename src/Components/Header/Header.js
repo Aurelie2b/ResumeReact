@@ -45,8 +45,10 @@ export default class Header extends Component {
                 backgroundColor: this.state.status === "top" ? "transparent" : "black",
                 color: this.state.status === "top" ? "white" : "white",
               }}  >
-            <button className="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="text-white">Menu</span> 
+              <div className="container-fluid">
+            
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="text-white toggler">Menu</span> 
             </button>
             <div className="collapse navbar-collapse" id="navbarToggleExternalContent">
                 <ul className="navbar-nav mr-auto">
@@ -72,6 +74,7 @@ export default class Header extends Component {
                         <Link className="nav-link" to="/Contact">Contact Me</Link>
                     </li>
                 </ul>
+            </div>
             </div>
         </nav>
         );

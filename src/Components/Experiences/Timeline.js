@@ -17,12 +17,11 @@ export default function Timeline() {
                     job={experience.job}
                     society={experience.society}
                     city={experience.city}
-                    workdescription={experience.workdescription}
+                    workDescription={experience.workDescription}
                     />
                 ))}
             </section>  
         </React.Fragment>
     )
-    
 }
 
