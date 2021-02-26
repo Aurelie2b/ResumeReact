@@ -77,7 +77,7 @@ import Button from 'react-bootstrap/Button'
                             </textarea>
                             {errors.comment && "oops, you forgot your message!"}<br />
                         </div>
-                        <Button type="submit" className="mb-5" variant="dark">Send</Button>
+                        <Button type="submit" className="mb-5 text-white" variant="outline-dark">Send</Button>
                     </form>
 
 

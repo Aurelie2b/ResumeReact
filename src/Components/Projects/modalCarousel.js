@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
 import './Carousel.scss'
 
+
+import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 
 import Flippy, { FrontSide, BackSide } from 'react-flippy'
@@ -111,7 +113,6 @@ import Flippy, { FrontSide, BackSide } from 'react-flippy'
       
       return (
 
-        <Flippy flipDirection="horizontal">
         <div
           key={slide.id}
           className={`Carousel-slide ${classMapper[index]}`}
@@ -119,36 +120,61 @@ import Flippy, { FrontSide, BackSide } from 'react-flippy'
           
         >
      
-        <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
-       
-          <div className="carousel-inner">
-            <div className="carousel-item active">
-              <FrontSide>
-                <div className="card" style={{ backgroundColor: 'black'}}>
-                  <img src={slide.picture} alt={slide.id}/>
-                  <Button className="text-white" variant="outline-dark">View more</Button>
-                </div>
-              </FrontSide>
-              
+              <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
+                <div className="carousel-inner">
+                  <div className="carousel-item active">
+                  
+                      <div className="card" style={{ backgroundColor: 'black'}}>
+                        <img className="d-block w-100" src={slide.picture} key={slide.id} alt={slide.id}></img>
+                        
+                        <Button className="btn text-white" 
+                        variant="outline-dark" 
+                        onClick={this.openModal}
+                        key={slide.id}
+                       
+                      
+                
+                        >
+                          View more
+                        </Button>
 
-              <BackSide style={{color: 'white'}} className="mt-2">
 
-                <div className="card mt-2" style={{ backgroundColor: 'black'}}>
-                  <h6 className="card-title mt-3">{slide.categorie}</h6>
-                  <h6 className="card-text mt-3">{slide.description}</h6>
-                  <h5 className="card-text mt-3"><a href={slide.appLink} className='m-3' target="_blank" rel="noopener noreferrer" style={{color: "white"}}><i className="fas fa-link"></i></a><a href={slide.githubLink} className='m-3' target="_blank" rel="noopener noreferrer" style={{color: "white"}}><i className="fab fa-github"></i></a></h5>
-                  <Button className="text-white mt-3" variant="outline-dark">Close</Button>
-                </div>
+                          <Modal size="mg"
+                          aria-labelledby="contained-modal-title-vcenter"
+                          centered show={this.state.show}
+                          className="text-center"
+                          key={currentIndex}
+                          >
+                            <Modal.Header closeButton>
+                            <Modal.Title >Technologie : {slide.categorie}</Modal.Title>
+                            </Modal.Header>
+                            <div className="card">
+                              <img className="d-block w-100" src={slide.picture} alt={slide.id}></img>
+                            </div>
+                            <br/>
+                            <h5>Description : </h5>
+                            {slide.description}
+                            <div className="m-3">
+                                <a href={slide.appLink} className='m-3' target="_blank" rel="noopener noreferrer" style={{color: "black"}}><i className="fas fa-link fa-2x"></i></a>
+                                <a href={slide.githubLink} className='m-3' target="_blank" rel="noopener noreferrer" style={{color: "black"}}><i className="fab fa-github fa-2x"></i></a>
+                              </div> 
+                            <Modal.Footer>
+                                
+                              <Button variant="outline-dark" className="justify-content-center" onClick={this.closeModal}>
+                                Close
+                              </Button>
+                            </Modal.Footer>
+                          </Modal>
+  
+                          </div>
+                     
+                  
+                     
+                  </div>
+                </div>  
+              </div>
 
-              </BackSide>
-
-            </div>
-          </div>   
-        
-      </div>
-    
         </div>
-        </Flippy>   
       );
     });
   }
@@ -156,19 +182,18 @@ import Flippy, { FrontSide, BackSide } from 'react-flippy'
 
   render() {
     const { currentIndex } = this.state
-    const { show } = this.state
-
 
     return (
       <div className="Wrapper">
         <div className="Carousel">{this.renderSlides()}</div>
-       
+        
+          <br/>
           <div className="Buttons">
           <Button
             disabled={currentIndex === 0}
             onClick={() => this.setState({ currentIndex: currentIndex - 1 })}
             style={{backgroundColor: 'rgba(0,0,0,0.5)'}}
-            variant="outline-dark"
+            
           >
           <i className="fas fa-chevron-left"></i>
           </Button>
@@ -176,7 +201,7 @@ import Flippy, { FrontSide, BackSide } from 'react-flippy'
             disabled={currentIndex === slides.length - 1}
             onClick={() => this.setState({ currentIndex: currentIndex + 1 })}
             style={{backgroundColor: 'rgba(0,0,0,0.5)'}}
-            variant="outline-dark"
+            
           >
           <i className="fas fa-chevron-right"></i>
           </Button>

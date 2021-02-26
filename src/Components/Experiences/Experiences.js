@@ -32,17 +32,17 @@ export default function Experiences(props) {
                         <h5 className="mt-2">{job}</h5>
                         <h5 className="mt-3">{' @' + society}</h5>
                         <h6 className="mt-3">{city}</h6>
-                        <Button className="mt-3" variant="dark" onClick={handleShow} >Work description</Button>
+                        <Button className="mt-3 text-white" variant="outline-dark" onClick={handleShow} >Work description</Button>
                 
                         <Modal show={show} onHide={handleClose} size="lg"
                         aria-labelledby="contained-modal-title-vcenter"
                         centered>
                             <Modal.Header closeButton>
-                            <Modal.Title >Work description</Modal.Title>
+                            <Modal.Title >Job description</Modal.Title>
                             </Modal.Header>
                             <Modal.Body>{workDescription}</Modal.Body>
                             <Modal.Footer>
-                                <Button variant="secondary" onClick={handleClose}>
+                                <Button variant="dark"  onClick={handleClose}>
                                     Close
                                 </Button>
                             </Modal.Footer>
@@ -66,7 +66,7 @@ export default function Experiences(props) {
                         <h5 className="mt-2">{job}</h5>
                         <h5 className="mt-3">{' @' + society}</h5>
                         <h6 className="mt-3">{city}</h6>
-                        <Button className="mt-3" variant="dark" onClick={handleShow} >Work description</Button>
+                        <Button className="mt-3 text-white" variant="outline-dark" onClick={handleShow} >Work description</Button>
                            
                         <Modal show={show} onHide={handleClose} size="lg"
                         aria-labelledby="contained-modal-title-vcenter"

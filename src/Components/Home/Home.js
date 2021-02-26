@@ -1,6 +1,7 @@
 import React from 'react'
 import './Home.scss'
 import { GreatThings} from 'moving-letters'
+import Button from 'react-bootstrap/Button'
 
 export default function Home() {
 
@@ -17,7 +18,7 @@ export default function Home() {
         <br/>
         <br/>
       
-        <a href={"DebayAurelieResume.pdf"} title="Dowload Aurélie Resume"><button className="text-white">DOWLOAD MY RESUME</button></a>
+        <a href={"DebayAurelieResume.pdf"} title="Dowload Aurélie Resume"><Button className="text-white" variant="outline-dark"><i className="fas fa-file-alt mr-2 text-lg"></i>DOWLOAD MY RESUME</Button></a>
       </div>
     
      
