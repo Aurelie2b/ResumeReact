@@ -25,7 +25,7 @@ export class Provider extends Component {
             {
                 id : 3,
                 categorie: 'Web',
-                description: ['HTML5', 'CSS3', 'XML/XSLT', 'Ajax', 'Json', 'jQuery','Responsive web design']
+                description: ['HTML5', 'CSS3', 'XML/XSLT', 'Ajax', 'Json','Responsive web design']
             },
             {
                 id : 4,
